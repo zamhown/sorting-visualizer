@@ -7,8 +7,9 @@ Some python scripts which can visualize several famous sorting algorithms and ge
 * If you need export the animations of sorting algorithms as MP4 files, you should download an offical release of FFMpeg (there is [the link](https://ffmpeg.zeranoe.com/builds/)). Taking Windows for example, after downloading, extract it to anywhere, and add `[your_path]/ffmpeg/bin` to the environment variable `PATH` to ensure you can run the command `ffmpeg` directly in CMD.
 ## Instructions
 Access the project's root directory using CMD or Shell, run the command like the following format to call all functions:  
-`python output.py arg1 [arg2 [arg3]]`  
-
+```
+python output.py arg1 [arg2 [arg3]]  
+```
 The following are the details of the three arguments:  
 * There are three posible arguments as "*arg1*":
     * `play` : Play an animation of a specific sorting algorithm or all algorithms in a new window, as a "figure" to Matplotlib.
@@ -28,6 +29,7 @@ The following are the details of the three arguments:
     * `almost-sorted` : Sort an almost-sorted sequence.
     * `few-unique` : Sort a few-unique sequence.
     * `random` (default) : Sort a random sequence.
-    * `reversed` : Sort a descending sequence.
+    * `reversed` : Sort a descending sequence.  
+
 For example, run `python output.py play heap-sort reversed` to create a new window to play the animation of sorting, which use heap sorting algorithms and sort a descending sequence.
 
