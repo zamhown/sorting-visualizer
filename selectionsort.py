@@ -24,5 +24,7 @@ def selection_sort(data_set):
             # FRAME OPERATION END
             if ds[j].value < ds[i].value:
                 ds[i], ds[j] = ds[j], ds[i]
+    # FRAME OPERATION BEGIN
     frames.append(ds)
     return frames
+    # FRAME OPERATION END
