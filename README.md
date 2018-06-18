@@ -1,5 +1,6 @@
 # Sorting Visualizer
-Some python scripts which can visualize several famous sorting algorithms and generate the animations via Matplotlib.  
+There are some python scripts which can visualize several famous sorting algorithms and generate the animations via Matplotlib.  
+
 Click the picture below to play the sample video.  
 [![click to play video](https://raw.githubusercontent.com/zamhown/sorting-visualizer/master/img/play_video.jpg)](https://www.bilibili.com/video/av25140582/)
 ## Environment Configuring
@@ -34,4 +35,4 @@ Details of the three arguments above:
 
 For example, run `python output.py play heap-sort reversed` to create a new window to play the animation of sorting, which use heap sorting algorithms and sort a descending sequence.  
 
-Have fun!
+There's nothing else need to be introduced. Have fun!
