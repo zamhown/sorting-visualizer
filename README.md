@@ -1,6 +1,7 @@
 # Sorting Visualizer
 Some python scripts which can visualize several famous sorting algorithms and generate the animations via Matplotlib.  
-![example](https://raw.githubusercontent.com/zamhown/sorting-visualizer/master/img/example.png)
+Click the picture below to play the sample video.  
+[![click to play video](https://raw.githubusercontent.com/zamhown/sorting-visualizer/master/img/play_video.jpg)](https://www.bilibili.com/video/av25140582/)
 ## Environment Configuring
 * Install [Python 3](https://www.python.org/downloads/) or [Anaconda](https://www.anaconda.com/download/) which includes it.
 * Install [Matplotlib](https://matplotlib.org/users/installing.html) via pip. However, if you have installed Anaconda before, you needn't install Matplotlib any more.
