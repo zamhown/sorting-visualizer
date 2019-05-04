@@ -14,7 +14,7 @@
   <div class="row">
     <section>
       <h1>Random</h1>
-      <iframe id="i1" scrolling="no" frameborder="0" src="all-random-animation.html"     onload="changeFrameHeight()"></iframe>
+      <iframe id="i1" scrolling="no" frameborder="0" src="all-random-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
     <section>
       <h1>Few Unique</h1>
@@ -25,24 +25,31 @@
   <div class="row">
     <section>
       <h1>Almost Sorted</h1>
-      <iframe id="i3" scrolling="no" frameborder="0" src="all-almost-sorted-animation.html"     onload="changeFrameHeight()"></iframe>
+      <iframe id="i3" scrolling="no" frameborder="0" src="all-almost-sorted-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
     <section>
       <h1>Reversed</h1>
-      <iframe id="i4" scrolling="no" frameborder="0" src="all-reversed-animation.html"   onload="changeFrameHeight()"></iframe>
+      <iframe id="i4" scrolling="no" frameborder="0" src="all-reversed-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
   </div>
 </article>
 
 <script>
+  var frameIds = ['i1', 'i2', 'i3', 'i4'];
+
+  frameIds.forEach(function(id){
+    var frameObj = document.getElementById(id);
+    frameObj.onload = changeFrameHeight;
+  });
+
+  window.onresize = changeFrameHeight;
+  window.onload = changeFrameHeight;
+
   function changeFrameHeight(){
-    ['i1', 'i2', 'i3', 'i4'].forEach(function(id){
+    frameIds.forEach(function(id){
       var frameObj = document.getElementById(id);
       var frameDoc = frameObj.contentDocument || frameObj.contentWindow.document;
       frameObj.height = frameDoc.documentElement.scrollHeight;
     });
-  }
-  window.onresize=function(){  
-    changeFrameHeight();  
   }
 </script>
