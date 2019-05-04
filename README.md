@@ -3,7 +3,7 @@ There are some python scripts which can visualize several famous sorting algorit
 
 Click the picture below to play the sample video.  
 [![click to play video](https://raw.githubusercontent.com/zamhown/sorting-visualizer/master/img/play_video.jpg)](https://www.bilibili.com/video/av25140582/)  
-[Webpage Edition](https://zamhown.github.io/sorting-visualizer)
+(You can also experience the [webpage edition](https://zamhown.github.io/sorting-visualizer).)
 ## Environment Configuring
 * Install [Python 3](https://www.python.org/downloads/) or [Anaconda](https://www.anaconda.com/download/) which includes it.
 * Install [Matplotlib](https://matplotlib.org/users/installing.html) via pip. However, if you have installed Anaconda before, you needn't install Matplotlib any more.
