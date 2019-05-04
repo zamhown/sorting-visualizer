@@ -1,80 +1,96 @@
-<style>
-  body {
-    background: #ddd;
-  }
-  section, iframe {
-    width: 100%;
-  }
-  section {
-    border: 1px solid #ccc;
-    margin: 10px;
-    background: #fff;
-    border-radius: 10px;
-  }
-  .row {
-    display: flex;
-  }
-  h1 {
-    text-align: center;
-  }
-
-  @media screen and (max-width: 768px) {
-    .row {
-      display: block;
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="always" name="referrer">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Visualizations of Nine Sorting Algorithms</title>
+  <style>
+    body {
+      background: #ddd;
     }
-  }
-</style>
+    section, iframe {
+      width: 100%;
+    }
+    section {
+      border: 1px solid #ccc;
+      margin: 10px;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .row {
+      display: flex;
+    }
+    h1, p {
+      text-align: center;
+    }
+  
+    @media screen and (max-width: 768px) {
+      .row {
+        display: block;
+      }
+      section {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <br>
+  <h1>Visualizations of Nine Sorting Algorithms</h1>
+  <br>
+  <article>
+    <div class="row">
+      <section>
+        <h1>Random Sequence</h1>
+        <iframe id="i1" scrolling="no" frameborder="0" src="all-random-animation.html" onload="changeFrameHeight()"></iframe>
+      </section>
+      <section>
+        <h1>Few-unique Sequence</h1>
+        <iframe id="i2" scrolling="no" frameborder="0" src="all-few-unique-animation.html" onload="changeFrameHeight()"></iframe>
+      </section>
+    </div>
+    <div class="row">
+      <section>
+        <h1>Almost-sorted Sequence</h1>
+        <iframe id="i3" scrolling="no" frameborder="0" src="all-almost-sorted-animation.html" onload="changeFrameHeight()"></iframe>
+      </section>
+      <section>
+        <h1>Descending Sequence</h1>
+        <iframe id="i4" scrolling="no" frameborder="0" src="all-reversed-animation.html" onload="changeFrameHeight()"></iframe>
+      </section>
+    </div>
+  </article>
+  <p>
+    <a href="https://www.bilibili.com/video/av25140582">Video Edition</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/zamhown/sorting-visualizer">Fork Me on GitHub!</a>
+  </p>
 
-<h1>Visualizations of Nine Sorting Algorithms</h1>
-<br>
-<article>
-  <div class="row">
-    <section>
-      <h1>Random Sequence</h1>
-      <iframe id="i1" scrolling="no" frameborder="0" src="all-random-animation.html" onload="changeFrameHeight()"></iframe>
-    </section>
-    <section>
-      <h1>Few-unique Sequence</h1>
-      <iframe id="i2" scrolling="no" frameborder="0" src="all-few-unique-animation.html" onload="changeFrameHeight()"></iframe>
-    </section>
-  </div>
-  <div class="row">
-    <section>
-      <h1>Almost-sorted Sequence</h1>
-      <iframe id="i3" scrolling="no" frameborder="0" src="all-almost-sorted-animation.html" onload="changeFrameHeight()"></iframe>
-    </section>
-    <section>
-      <h1>Descending Sequence</h1>
-      <iframe id="i4" scrolling="no" frameborder="0" src="all-reversed-animation.html" onload="changeFrameHeight()"></iframe>
-    </section>
-  </div>
-</article>
-<p>
-  <a href="https://www.bilibili.com/video/av25140582">Video Edition</a>&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/zamhown/sorting-visualizer">Fork Me on GitHub!</a>
-</p>
+  <script>
+    var frameIds = ['i1', 'i2', 'i3', 'i4'];
 
-<script>
-  var frameIds = ['i1', 'i2', 'i3', 'i4'];
-
-  frameIds.forEach(function(id){
-    var frameObj = document.getElementById(id);
-    frameObj.onload = changeFrameHeight;
-  });
-
-  window.onresize = changeFrameHeight;
-  window.onload = changeFrameHeight;
-  setInterval(changeFrameHeight, 1000);
-
-  function changeFrameHeight(){
     frameIds.forEach(function(id){
       var frameObj = document.getElementById(id);
-      var frameDoc = frameObj.contentDocument || frameObj.contentWindow.document;
-      if(frameDoc.body){
-        frameObj.height = frameDoc.body.scrollHeight;
-      }else if(frameDoc.documentElement){
-        frameObj.height = frameDoc.documentElement.scrollHeight;
-      }
+      frameObj.onload = changeFrameHeight;
     });
-  }
-</script>
+
+    window.onresize = changeFrameHeight;
+    window.onload = changeFrameHeight;
+    setInterval(changeFrameHeight, 1000);
+
+    function changeFrameHeight(){
+      frameIds.forEach(function(id){
+        var frameObj = document.getElementById(id);
+        var frameDoc = frameObj.contentDocument || frameObj.contentWindow.document;
+        if(frameDoc.body){
+          frameObj.height = frameDoc.body.scrollHeight;
+        }else if(frameDoc.documentElement){
+          frameObj.height = frameDoc.documentElement.scrollHeight;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
