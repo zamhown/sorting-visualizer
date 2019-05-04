@@ -17,31 +17,42 @@
   h1 {
     text-align: center;
   }
+
+  @media screen and (max-width: 768px) {
+    .row {
+      display: block;
+    }
+  }
 </style>
 
+<h1>Visualizations of Nine Sorting Algorithms</h1>
+<br>
 <article>
   <div class="row">
     <section>
-      <h1>Random</h1>
+      <h1>Random Sequence</h1>
       <iframe id="i1" scrolling="no" frameborder="0" src="all-random-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
     <section>
-      <h1>Few Unique</h1>
+      <h1>Few-unique Sequence</h1>
       <iframe id="i2" scrolling="no" frameborder="0" src="all-few-unique-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
   </div>
-  <br><br>
   <div class="row">
     <section>
-      <h1>Almost Sorted</h1>
+      <h1>Almost-sorted Sequence</h1>
       <iframe id="i3" scrolling="no" frameborder="0" src="all-almost-sorted-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
     <section>
-      <h1>Reversed</h1>
+      <h1>Descending Sequence</h1>
       <iframe id="i4" scrolling="no" frameborder="0" src="all-reversed-animation.html" onload="changeFrameHeight()"></iframe>
     </section>
   </div>
 </article>
+<p>
+  <a href="https://www.bilibili.com/video/av25140582">Video Edition</a>&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/zamhown/sorting-visualizer">Fork Me on GitHub!</a>
+</p>
 
 <script>
   var frameIds = ['i1', 'i2', 'i3', 'i4'];
