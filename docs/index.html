@@ -49,7 +49,11 @@
     frameIds.forEach(function(id){
       var frameObj = document.getElementById(id);
       var frameDoc = frameObj.contentDocument || frameObj.contentWindow.document;
-      frameObj.height = frameDoc.documentElement.scrollHeight;
+      if(frameDoc.body){
+        frameObj.height = frameDoc.body.scrollHeight;
+      }else if(frameDoc.documentElement){
+        frameObj.height = frameDoc.documentElement.scrollHeight;
+      }
     });
   }
 </script>
