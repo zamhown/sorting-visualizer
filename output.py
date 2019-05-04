@@ -1,9 +1,9 @@
 # Script Name     : output.py
 # Author          : Howard Zhang
 # Created         : 14th June 2018
-# Last Modified	  : 16th June 2018
-# Version         : 1.1
-# Modifications	  : 1.1 - Added more APIs.
+# Last Modified	  : 4th May 2019
+# Version         : 1.2
+# Modifications	  : 1.2 - Added the new option of modifying the number of items to be sorted.
 # Description     : Processing user's input, Playing animations and generating animation files.
 
 import random
@@ -12,16 +12,16 @@ import sys
 import re
 from matplotlib import pyplot as plt
 from matplotlib import animation
-from data import Data
-from selectionsort import selection_sort
-from bubblesort import bubble_sort
-from insertionsort import insertion_sort
-from shellsort import shell_sort
-from mergesort import merge_sort
-from quicksort import quick_sort
-from heapsort import heap_sort
-from combsort import comb_sort
-from monkeysort import monkey_sort
+from sorting.data import Data
+from sorting.selectionsort import selection_sort
+from sorting.bubblesort import bubble_sort
+from sorting.insertionsort import insertion_sort
+from sorting.shellsort import shell_sort
+from sorting.mergesort import merge_sort
+from sorting.quicksort import quick_sort
+from sorting.heapsort import heap_sort
+from sorting.combsort import comb_sort
+from sorting.monkeysort import monkey_sort
 
 stype_dic = {'all': -1,
              'insertion-sort': 0, 'shell-sort':1,  'selection-sort': 2, 
@@ -152,6 +152,10 @@ def draw_all_charts(original_data, frame_interval):
     return plt, anim
 
 if __name__ == "__main__":
+    try:
+        Data.data_count = int(input('Please set the number of items to be sorted(32): '))
+    except:
+        Data.data_count = 32
     if len(sys.argv) > 1:
         # Type of sort algorithm.
         stype = -1
